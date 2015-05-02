@@ -10,4 +10,10 @@
 
 @interface IMChat : UIViewController
 
++ (NSString *)currentBuddyJid;
++ (void)setCurrentBuddyJid:(NSString *)jid;
+
+- (instancetype)initWithBuddyJID:(NSString *)buddyJID buddyName:(NSString *)buddyName;
+
+
 @end

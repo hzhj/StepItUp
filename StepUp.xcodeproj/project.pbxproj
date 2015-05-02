@@ -67,6 +67,9 @@
 		30B1C4141AEF5433009C6734 /* ReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30B1C4121AEF5433009C6734 /* ReminderCell.xib */; };
 		30B1C4181AEF5457009C6734 /* ReminderFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B1C4161AEF5457009C6734 /* ReminderFoot.m */; };
 		30B1C4191AEF5457009C6734 /* ReminderFoot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30B1C4171AEF5457009C6734 /* ReminderFoot.xib */; };
+		AB2D49DD1AF10C0B002B1653 /* IMChat.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D49DC1AF10C0B002B1653 /* IMChat.m */; };
+		AB2D49E31AF10C29002B1653 /* IMChatSendBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D49E01AF10C29002B1653 /* IMChatSendBar.m */; };
+		AB2D49E41AF10C29002B1653 /* IMMessageCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D49E21AF10C29002B1653 /* IMMessageCellFactory.m */; };
 		ABAE63DD1AEBD154001E5A16 /* MeHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAE63D41AEBD154001E5A16 /* MeHeadCell.m */; };
 		ABAE63DE1AEBD154001E5A16 /* MeFensiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAE63D71AEBD154001E5A16 /* MeFensiCell.m */; };
 		ABAE63DF1AEBD154001E5A16 /* MeHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABAE63D81AEBD154001E5A16 /* MeHeadCell.xib */; };
@@ -79,8 +82,6 @@
 		ABAE63ED1AEBD3A8001E5A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABAE63EC1AEBD3A8001E5A16 /* Images.xcassets */; };
 		ABAE63F01AEBD583001E5A16 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE63EF1AEBD583001E5A16 /* DiscoverViewController.swift */; };
 		ABC3AA701AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC3AA6F1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m */; };
-		ABD742CD1AEFB0E70074510C /* IMChat.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD742CC1AEFB0E60074510C /* IMChat.m */; };
-		ABD742D01AEFB95A0074510C /* IMMessageCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD742CF1AEFB95A0074510C /* IMMessageCellFactory.m */; };
 		ABD743141AEFCE690074510C /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743001AEFCE690074510C /* NSDataAdditions.m */; };
 		ABD743151AEFCE690074510C /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743021AEFCE690074510C /* NSDateAdditions.m */; };
 		ABD743161AEFCE690074510C /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743041AEFCE690074510C /* NSStringAdditions.m */; };
@@ -210,6 +211,12 @@
 		5201C7B9E535289701CD6687 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2D2B9C600C44E5F7823C4E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9696A524C6356E03A32DF129 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AB2D49DB1AF10C0B002B1653 /* IMChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMChat.h; sourceTree = "<group>"; };
+		AB2D49DC1AF10C0B002B1653 /* IMChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMChat.m; sourceTree = "<group>"; };
+		AB2D49DF1AF10C29002B1653 /* IMChatSendBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMChatSendBar.h; sourceTree = "<group>"; usesTabs = 0; };
+		AB2D49E01AF10C29002B1653 /* IMChatSendBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMChatSendBar.m; sourceTree = "<group>"; };
+		AB2D49E11AF10C29002B1653 /* IMMessageCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessageCellFactory.h; sourceTree = "<group>"; };
+		AB2D49E21AF10C29002B1653 /* IMMessageCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessageCellFactory.m; sourceTree = "<group>"; };
 		ABAE63D41AEBD154001E5A16 /* MeHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHeadCell.m; sourceTree = "<group>"; };
 		ABAE63D51AEBD154001E5A16 /* MeHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHeadCell.h; sourceTree = "<group>"; };
 		ABAE63D61AEBD154001E5A16 /* MeFensiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeFensiCell.h; sourceTree = "<group>"; };
@@ -229,10 +236,6 @@
 		ABAE63EF1AEBD583001E5A16 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		ABC3AA6E1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMChatMessageEntityFactory.h; sourceTree = "<group>"; };
 		ABC3AA6F1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMChatMessageEntityFactory.m; sourceTree = "<group>"; };
-		ABD742CB1AEFB0E60074510C /* IMChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMChat.h; path = ../Views/IMChat.h; sourceTree = "<group>"; };
-		ABD742CC1AEFB0E60074510C /* IMChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMChat.m; path = ../Views/IMChat.m; sourceTree = "<group>"; };
-		ABD742CE1AEFB95A0074510C /* IMMessageCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessageCellFactory.h; sourceTree = "<group>"; };
-		ABD742CF1AEFB95A0074510C /* IMMessageCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessageCellFactory.m; sourceTree = "<group>"; };
 		ABD742FF1AEFCE690074510C /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		ABD743001AEFCE690074510C /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		ABD743011AEFCE690074510C /* NSDateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateAdditions.h; sourceTree = "<group>"; };
@@ -308,6 +311,7 @@
 		309431FB1AE634F10031A64E /* StepUp */ = {
 			isa = PBXGroup;
 			children = (
+				AB2D49D61AF08536002B1653 /* Utilities */,
 				ABD743221AEFD1BE0074510C /* ViewModel */,
 				3094325F1AE635C00031A64E /* Doc */,
 				309432621AE635C00031A64E /* Macros */,
@@ -409,7 +413,7 @@
 		309432981AE6364C0031A64E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				ABD742C91AEFB0020074510C /* Chat */,
+				AB2D49DA1AF10C0B002B1653 /* Chat */,
 				ABAE63EE1AEBD567001E5A16 /* Discover */,
 				ABAE63D21AEBD10F001E5A16 /* Me */,
 				309433141AE647E20031A64E /* Group */,
@@ -422,7 +426,7 @@
 		309432991AE6364C0031A64E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ABD742CA1AEFB00A0074510C /* Chat */,
+				AB2D49DE1AF10C29002B1653 /* Chat */,
 				ABAE63D11AEBD0DC001E5A16 /* Me */,
 				30B98BEA1AE66C7B00A05ECC /* Discover */,
 				3094331A1AE6491C0031A64E /* Dynamic */,
@@ -640,6 +644,34 @@
 			path = Discover;
 			sourceTree = "<group>";
 		};
+		AB2D49D61AF08536002B1653 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
+			path = StepItUp/Utilities;
+			sourceTree = "<group>";
+		};
+		AB2D49DA1AF10C0B002B1653 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AB2D49DB1AF10C0B002B1653 /* IMChat.h */,
+				AB2D49DC1AF10C0B002B1653 /* IMChat.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		AB2D49DE1AF10C29002B1653 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AB2D49DF1AF10C29002B1653 /* IMChatSendBar.h */,
+				AB2D49E01AF10C29002B1653 /* IMChatSendBar.m */,
+				AB2D49E11AF10C29002B1653 /* IMMessageCellFactory.h */,
+				AB2D49E21AF10C29002B1653 /* IMMessageCellFactory.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		ABAE63D11AEBD0DC001E5A16 /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,24 +724,6 @@
 				ABC3AA6F1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		ABD742C91AEFB0020074510C /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				ABD742CB1AEFB0E60074510C /* IMChat.h */,
-				ABD742CC1AEFB0E60074510C /* IMChat.m */,
-			);
-			name = Chat;
-			sourceTree = "<group>";
-		};
-		ABD742CA1AEFB00A0074510C /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				ABD742CE1AEFB95A0074510C /* IMMessageCellFactory.h */,
-				ABD742CF1AEFB95A0074510C /* IMMessageCellFactory.m */,
-			);
-			name = Chat;
 			sourceTree = "<group>";
 		};
 		ABD742FE1AEFCE690074510C /* 320Categories */ = {
@@ -939,7 +953,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD742CD1AEFB0E70074510C /* IMChat.m in Sources */,
 				ABC3AA701AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m in Sources */,
 				3094329E1AE6376B0031A64E /* MainTabBarViewController.swift in Sources */,
 				ABD7431A1AEFCE690074510C /* UIFontAdditions.m in Sources */,
@@ -949,6 +962,7 @@
 				30B1C3FE1AEF32C0009C6734 /* JTCalendarMonthView.m in Sources */,
 				ABD743141AEFCE690074510C /* NSDataAdditions.m in Sources */,
 				309432FF1AE63D880031A64E /* SIUCreateScheduleTextCell.m in Sources */,
+				AB2D49DD1AF10C0B002B1653 /* IMChat.m in Sources */,
 				ABD743181AEFCE690074510C /* TTGlobalCoreLocale.m in Sources */,
 				ABD743151AEFCE690074510C /* NSDateAdditions.m in Sources */,
 				ABAE63E21AEBD154001E5A16 /* MeSelectCell.m in Sources */,
@@ -982,11 +996,11 @@
 				ABD7431B1AEFCE690074510C /* UIImageAdditions.m in Sources */,
 				309432E31AE63D4F0031A64E /* XHPopMenuItemView.m in Sources */,
 				30B1C4001AEF32C0009C6734 /* JTCalendarWeekView.m in Sources */,
-				ABD742D01AEFB95A0074510C /* IMMessageCellFactory.m in Sources */,
 				309432A21AE638110031A64E /* ABCIntroView.m in Sources */,
 				30B1C3FC1AEF32C0009C6734 /* JTCalendarMenuMonthView.m in Sources */,
 				30B1C3FA1AEF32C0009C6734 /* JTCalendarDataCache.m in Sources */,
 				309431FF1AE634F10031A64E /* AppDelegate.swift in Sources */,
+				AB2D49E41AF10C29002B1653 /* IMMessageCellFactory.m in Sources */,
 				ABAE63DE1AEBD154001E5A16 /* MeFensiCell.m in Sources */,
 				309432FB1AE63D880031A64E /* SIUBasicSwitchCell.m in Sources */,
 				30B1C3F71AEF32C0009C6734 /* JTCalendar.m in Sources */,
@@ -997,6 +1011,7 @@
 				ABD743191AEFCE690074510C /* TTGlobalUICommon.m in Sources */,
 				30B1C3FD1AEF32C0009C6734 /* JTCalendarMenuView.m in Sources */,
 				30B1C4131AEF5433009C6734 /* ReminderCell.m in Sources */,
+				AB2D49E31AF10C29002B1653 /* IMChatSendBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

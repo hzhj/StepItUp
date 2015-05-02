@@ -106,18 +106,18 @@
     if ([object isKindOfClass:[IMChatMessageBaseEntity class]]) {
         IMChatMessageBaseEntity *entity = (IMChatMessageBaseEntity *)object;
         
-        if (entity.isOutgoing) {
+//        if (entity.isOutgoing) {
             [self.headView sd_setImageWithURL:nil
              //[NSURL URLWithString:HEAD_IMAGE(MY_JID.user)]
                              placeholderImage:[UIImage imageNamed:@"head_s.png"]];
-        }
-        else {
-//            if ([IMChatC currentBuddyJid]) {
-//                [self.headView  sd_setImageWithURL:nil
-//                 //[NSURL URLWithString:HEAD_IMAGE([IMChatC currentBuddyJid].user)]
-//                                  placeholderImage:[UIImage imageNamed:@"head_s.png"]];
-//            }
-        }
+//        }
+//        else {
+////            if ([IMChatC currentBuddyJid]) {
+////                [self.headView  sd_setImageWithURL:nil
+////                 //[NSURL URLWithString:HEAD_IMAGE([IMChatC currentBuddyJid].user)]
+////                                  placeholderImage:[UIImage imageNamed:@"head_s.png"]];
+////            }
+//        }
     }
     
     return YES;
@@ -337,13 +337,14 @@
     // 从文本中解析出表情等关键字
     if ([object isKindOfClass:[IMChatMessageTextEntity class]]) {
         self.textMessage = (IMChatMessageTextEntity *)object;
-        self.type = self.textMessage.type;
-        self.isOutgoing = self.textMessage.isOutgoing;
         
-        [self.textMessage parseAllKeywords];
-        self.contentLabel.text = self.textMessage.text;
-        [IMMessageTextCell insertAllEmotionsInContentLabel:self.contentLabel
-                                           withChatMessage:self.textMessage];
+        self.type = IMChatMessageType_Text;
+        self.isOutgoing = YES;
+        
+//        [self.textMessage parseAllKeywords];
+        self.contentLabel.text = @"你好";
+//        [IMMessageTextCell insertAllEmotionsInContentLabel:self.contentLabel
+//                                           withChatMessage:self.textMessage];
     }
     return YES;
 }
