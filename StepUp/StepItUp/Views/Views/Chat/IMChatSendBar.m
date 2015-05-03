@@ -11,7 +11,7 @@
 #import <AFNetworkReachabilityManager.h>
 #import <Nimbus/NIPreprocessorMacros.h>
 //#import "IMUIHelper.h"
-//#import "IMEmotionManager.h"
+#import "IMEmotionManager.h"
 #import "TTGlobalUICommon.h"
 #import "UIViewAdditions.h"
 #import "IMUIMacros.h"
@@ -347,19 +347,19 @@
 
 - (void)deleteLastCharTextView
 {
-//    if (self.textView.text.length > 0) {
-//        NSRange range = NSMakeRange(self.textView.text.length - 1, 1);
-//        BOOL success =
-//        [[IMEmotionManager sharedManager] deleteEmotionInTextView:self.textView.internalTextView
-//                                                          atRange:range];
-//        if (success) {
-//            
-//        }
-//        else {
-//            self.textView.text = [self.textView.text substringToIndex:self.textView.text.length - 1];
-//        }
-//        [self.textView refreshHeight];
-//    }
+    if (self.textView.text.length > 0) {
+        NSRange range = NSMakeRange(self.textView.text.length - 1, 1);
+        BOOL success =
+        [[IMEmotionManager sharedManager] deleteEmotionInTextView:self.textView.internalTextView
+                                                          atRange:range];
+        if (success) {
+            
+        }
+        else {
+            self.textView.text = [self.textView.text substringToIndex:self.textView.text.length - 1];
+        }
+        [self.textView refreshHeight];
+    }
 }
 
 - (BOOL)makeTextViewBecomeFirstResponder

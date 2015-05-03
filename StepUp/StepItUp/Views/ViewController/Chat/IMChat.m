@@ -8,6 +8,9 @@
 
 #import "IMChat.h"
 #import "IMChatSendBar.h"
+#import "IMAudioRecordView.h"
+#import "IMEmotionMainView.h"
+#import "IMChatShareMoreView.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 #import <Nimbus/NIPreprocessorMacros.h>
 #import "UIViewAdditions.h"
@@ -37,9 +40,9 @@ static NSString *currentChatBuddyJid = nil;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) IMChatSendBar *chatSendBar;
-//@property (nonatomic, strong) IMAudioRecordView *audioRecordView;
-//@property (nonatomic, strong) IMEmotionMainView* emotionMainView;
-//@property (nonatomic, strong) IMChatShareMoreView* shareMoreView;
+@property (nonatomic, strong) IMAudioRecordView *audioRecordView;
+@property (nonatomic, strong) IMEmotionMainView* emotionMainView;
+@property (nonatomic, strong) IMChatShareMoreView* shareMoreView;
 
 @property (nonatomic, assign) BOOL willShowEmtionOrShareMoreView;
 //@property (nonatomic, strong) IMChatViewModel *viewModel;
@@ -255,40 +258,40 @@ static NSString *currentChatBuddyJid = nil;
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //#pragma mark - UI Create
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-//- (IMAudioRecordView *)audioRecordView
-//{
-//    if (!_audioRecordView) {
-//        _audioRecordView = [[IMAudioRecordView alloc] initWithFrame:
-//                            CGRectMake(0.f, self.view.height, self.view.width, TT_KEYBOARD_HEIGHT)];
-//        _audioRecordView.delegate = self;
-//        [self.view addSubview:_audioRecordView];
-//    }
-//    return _audioRecordView;
-//}
-//
-//- (IMEmotionMainView *)emotionMainView
-//{
-//    // 显示表情选择框
-//    if (!_emotionMainView) {
-//        _emotionMainView = [[IMEmotionMainView alloc] initWithFrame:
-//                            CGRectMake(0.f, self.view.height, self.view.width, TT_KEYBOARD_HEIGHT)];
-//        _emotionMainView.emotionDelegate = self;
-//        [self.view addSubview:_emotionMainView];
-//    }
-//    return _emotionMainView;
-//}
-//
-//- (IMChatShareMoreView *)shareMoreView
-//{
-//    if (!_shareMoreView) {
-//        _shareMoreView = [[IMChatShareMoreView alloc] initWithFrame:
-//                          CGRectMake(0.f, self.view.height, self.view.width, TT_KEYBOARD_HEIGHT)];
-//        _shareMoreView.shareMoreDelegate = self;
-//        [self.view addSubview:_shareMoreView];
-//    }
-//    return _shareMoreView;
-//}
+
+- (IMAudioRecordView *)audioRecordView
+{
+    if (!_audioRecordView) {
+        _audioRecordView = [[IMAudioRecordView alloc] initWithFrame:
+                            CGRectMake(0.f, self.view.height, self.view.width, TT_KEYBOARD_HEIGHT)];
+        _audioRecordView.delegate = self;
+        [self.view addSubview:_audioRecordView];
+    }
+    return _audioRecordView;
+}
+
+- (IMEmotionMainView *)emotionMainView
+{
+    // 显示表情选择框
+    if (!_emotionMainView) {
+        _emotionMainView = [[IMEmotionMainView alloc] initWithFrame:
+                            CGRectMake(0.f, self.view.height, self.view.width, TT_KEYBOARD_HEIGHT)];
+        _emotionMainView.emotionDelegate = self;
+        [self.view addSubview:_emotionMainView];
+    }
+    return _emotionMainView;
+}
+
+- (IMChatShareMoreView *)shareMoreView
+{
+    if (!_shareMoreView) {
+        _shareMoreView = [[IMChatShareMoreView alloc] initWithFrame:
+                          CGRectMake(0.f, self.view.height, self.view.width, TT_KEYBOARD_HEIGHT)];
+        _shareMoreView.shareMoreDelegate = self;
+        [self.view addSubview:_shareMoreView];
+    }
+    return _shareMoreView;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Animation
@@ -299,9 +302,9 @@ static NSString *currentChatBuddyJid = nil;
     [UIView animateWithDuration:.3f animations:^{
         self.chatSendBar.bottom = self.view.height;
         self.tableView.height = [self getTableViewHeight];
-//        self.audioRecordView.top =
-//        self.emotionMainView.top =
-//        self.shareMoreView.top = self.chatSendBar.bottom;
+        self.audioRecordView.top =
+        self.emotionMainView.top =
+        self.shareMoreView.top = self.chatSendBar.bottom;
     } completion:^(BOOL finished) {
         
     }];
@@ -310,15 +313,15 @@ static NSString *currentChatBuddyJid = nil;
 - (void)popupEmotionViewOrShareMoreViewAnimation
 {
     self.willShowEmtionOrShareMoreView = YES;
-//    self.audioRecordView.top =
-//    self.emotionMainView.top =
-//    self.shareMoreView.top = self.chatSendBar.bottom;
+    self.audioRecordView.top =
+    self.emotionMainView.top =
+    self.shareMoreView.top = self.chatSendBar.bottom;
     
     [UIView animateWithDuration:.2f animations:^{
-//        self.audioRecordView.top =
-//        self.emotionMainView.top =
-//        self.shareMoreView.top = self.view.height - self.emotionMainView.height;
-//        self.chatSendBar.bottom = self.emotionMainView.top;
+        self.audioRecordView.top =
+        self.emotionMainView.top =
+        self.shareMoreView.top = self.view.height - self.emotionMainView.height;
+        self.chatSendBar.bottom = self.emotionMainView.top;
         self.tableView.height = self.chatSendBar.top;
     } completion:^(BOOL finished) {
         
@@ -330,9 +333,9 @@ static NSString *currentChatBuddyJid = nil;
 - (void)popdownEmotionViewOrShareMoreViewAnimation
 {
     [UIView animateWithDuration:.2f animations:^{
-//        self.audioRecordView.top =
-//        self.emotionMainView.top =
-//        self.shareMoreView.top = self.view.height;
+        self.audioRecordView.top =
+        self.emotionMainView.top =
+        self.shareMoreView.top = self.view.height;
     } completion:^(BOOL finished) {
     }];
 }
@@ -340,9 +343,9 @@ static NSString *currentChatBuddyJid = nil;
 - (void)popupaudioRecordViewAnimation
 {
     // create shareMoreView
-//    if (self.shareMoreView && self.emotionMainView) {
-//        [self.view bringSubviewToFront:self.audioRecordView];
-//    }
+    if (self.shareMoreView && self.emotionMainView) {
+        [self.view bringSubviewToFront:self.audioRecordView];
+    }
     [self popupEmotionViewOrShareMoreViewAnimation];
 }
 
@@ -354,10 +357,10 @@ static NSString *currentChatBuddyJid = nil;
 - (void)popupEmotionViewAnimation
 {
     // create shareMoreView
-//    if (self.audioRecordView && self.shareMoreView) {
-//        [self.view bringSubviewToFront:self.emotionMainView];
-//    }
-//    [self popupEmotionViewOrShareMoreViewAnimation];
+    if (self.audioRecordView && self.shareMoreView) {
+        [self.view bringSubviewToFront:self.emotionMainView];
+    }
+    [self popupEmotionViewOrShareMoreViewAnimation];
 }
 
 - (void)popdownEmotionViewAnimation
@@ -367,11 +370,11 @@ static NSString *currentChatBuddyJid = nil;
 
 - (void)popupShareMoreViewAnimation
 {
-//    if (self.emotionMainView && self.shareMoreView) {
-//        [self.view bringSubviewToFront:self.shareMoreView];
-//    }
-//    [self.view bringSubviewToFront:self.shareMoreView];
-//    [self popupEmotionViewOrShareMoreViewAnimation];
+    if (self.emotionMainView && self.shareMoreView) {
+        [self.view bringSubviewToFront:self.shareMoreView];
+    }
+    [self.view bringSubviewToFront:self.shareMoreView];
+    [self popupEmotionViewOrShareMoreViewAnimation];
 }
 
 - (void)popdownShareMoreViewAnimation
@@ -414,12 +417,12 @@ static NSString *currentChatBuddyJid = nil;
         
         self.chatSendBar.bottom = self.view.height - keyboardBounds.size.height;
         self.tableView.height = self.chatSendBar.top;
-//        self.audioRecordView.top =
-//        self.emotionMainView.top =
-//        self.shareMoreView.top = self.chatSendBar.bottom;
+        self.audioRecordView.top =
+        self.emotionMainView.top =
+        self.shareMoreView.top = self.chatSendBar.bottom;
         
         // TODO: 底部一起上移效果更好些，但是需要深入考虑当只有几条时候，高度如何计算
-        //self.tableView.bottom = self.chatSendBar.bottom - self.chatSendBar.height;
+        self.tableView.bottom = self.chatSendBar.bottom - self.chatSendBar.height;
     } completion:^(BOOL finished) {
         
         [self scrollToBottomAnimated:YES];
@@ -428,7 +431,7 @@ static NSString *currentChatBuddyJid = nil;
 
 - (void)keyboardWillHide:(NSNotification*)notification
 {
-    //[self popdownSendBarAnimation];
+    [self popdownSendBarAnimation];
     
     // 键盘切换表情，消失键盘时，不需要执行下面的动画
     if (self.willShowEmtionOrShareMoreView) {
@@ -444,10 +447,10 @@ static NSString *currentChatBuddyJid = nil;
         
         self.chatSendBar.bottom = self.view.height;
         self.tableView.height = self.chatSendBar.top;
-//        self.audioRecordView.top =
-//        self.emotionMainView.top =
-//        self.shareMoreView.top = self.chatSendBar.bottom;
-        //self.tableView.bottom = self.chatSendBar.bottom - self.chatSendBar.height;
+        self.audioRecordView.top =
+        self.emotionMainView.top =
+        self.shareMoreView.top = self.chatSendBar.bottom;
+        self.tableView.bottom = self.chatSendBar.bottom - self.chatSendBar.height;
     } completion:^(BOOL finished) {
         
     }];
@@ -487,7 +490,7 @@ static NSString *currentChatBuddyJid = nil;
     [UIView animateWithDuration:.2f animations:^{
         self.tableView.height = self.chatSendBar.top;
     } completion:^(BOOL finished) {
-        //        [self scrollToBottomAnimated:NO];
+                [self scrollToBottomAnimated:NO];
     }];
 }
 
